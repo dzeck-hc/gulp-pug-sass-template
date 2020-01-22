@@ -1,0 +1,67 @@
+mixin search(val)
+  section.search
+    .search-form
+      if val == false
+        .search-group
+          //- //- label(for="selectCity").label País
+          select#selectCity(name="selectCity").search-select
+            option(value="" selected="selected") Elige tu ciudad
+            option(value="acoruna") A Coruña
+            option(value="alava") Álava
+            option(value="albacete") Albacete
+            option(value="alicante") Alicante
+            option(value="almeria") Almería
+            option(value="asturias") Asturias
+            option(value="barcelona") Barcelona
+            option(value="cadiz") Cádiz
+            option(value="larioja") La Rioja
+            option(value="laspalmas") Las Palmas
+            option(value="lugo") Lugo
+            option(value="madrid") Madrid
+            option(value="malaga") Málaga
+            option(value="navarra") Navarra
+            option(value="pontevedra") Pontevedra
+            option(value="santacruztenerife") Santa Cruz Tenerife
+            option(value="sevilla") Sevilla
+            option(value="tarragona") Tarragona
+            option(value="valencia") Valencia
+            option(value="valladolid") Valladolid
+            option(value="vizcaya") Vizcaya
+            option(value="zaragoza") Zaragoza
+
+      else
+        .search-group
+          //- //- label(for="selectCity").label País
+          select#selectCity(name="selectCity").search-select
+            option(value="" selected="selected") Elige tu ciudad
+            option(value="acoruna") A Coruña
+            option(value="alava") Álava
+            option(value="albacete") Albacete
+            option(value="alicante") Alicante
+            option(value="almeria") Almería
+            option(value="asturias") Asturias
+            option(value="barcelona") Barcelona
+            option(value="cadiz") Cádiz
+            option(value="larioja") La Rioja
+            option(value="laspalmas") Las Palmas
+            option(value="lugo") Lugo
+            option(value="madrid") Madrid
+            option(value="malaga") Málaga
+            option(value="navarra") Navarra
+            option(value="pontevedra") Pontevedra
+            option(value="santacruztenerife") Santa Cruz Tenerife
+            option(value="sevilla") Sevilla
+            option(value="tarragona") Tarragona
+            option(value="valencia") Valencia
+            option(value="valladolid") Valladolid
+            option(value="vizcaya") Vizcaya
+            option(value="zaragoza") Zaragoza
+
+        .search-group
+          //- //- label(for="selectCinema").label Cine
+          select#selectCinema(name="selectCinema").search-select
+            option(value="" selected="selected") Elige tu cine
+
+      a.btn.btn-search Ver promociones
+
+

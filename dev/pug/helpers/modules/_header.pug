@@ -1,0 +1,30 @@
+mixin header(logo, login, centroamerica)
+  header.header
+    if logo == true
+      h1.header-logo
+        img(src="/images/general/lg/lg-premios-head.svg", alt="Premios Cinepolis 2020")
+
+      if login == true
+        if centroamerica
+          +navigation(true, true)
+        else 
+          +navigation(true, false)
+      else
+        if centroamerica
+          +navigation(false, true)
+        else 
+          +navigation(false, false)
+        
+
+    else
+      h1.header-logo
+      if login == true
+        if centroamerica
+          +navigation(true, true)
+        else 
+          +navigation(true, false)
+      else
+        if centroamerica
+          +navigation(false, true)
+        else 
+          +navigation(false, false)

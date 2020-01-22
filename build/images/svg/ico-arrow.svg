@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>ico/ico-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ico/ico-arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="palette/white" fill="#FFFFFF">
+            <path d="M37.3840662,53.5444166 C36.5400333,52.690719 36.5400333,51.3114984 37.3840662,50.4555834 L57.4157798,30.1752758 C58.634217,28.940186 60.6166122,28.940186 61.8372136,30.1752758 C63.0556508,31.4103656 63.0556508,33.414892 61.8372136,34.6499818 L44.701182,52.0011087 L61.8372136,69.3478008 C63.0556508,70.585108 63.0556508,72.5896344 61.8372136,73.8247242 C60.6166122,75.059814 58.634217,75.059814 57.4157798,73.8247242 L37.3840662,53.5444166 Z" id="arrow" transform="translate(49.751637, 52.000000) rotate(-90.000000) translate(-49.751637, -52.000000) "></path>
+        </g>
+    </g>
+</svg>

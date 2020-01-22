@@ -1,0 +1,77 @@
+mixin modal(vista)
+	.modalBox
+		.modalBox-overlay
+			a.btn-exit-modal.exit(href="#")
+			.modalBox-content
+
+				.login
+						h3.login-title Inicia sesión
+						a.btn.btn-social.btn-social--facebook#btnLogin(href="/quiniela-login.html")
+
+				.bases
+					h3.bases-title Bases y Condiciones
+					.bases-content.scroll 
+						.bases-target
+				
+				if vista == 'quiniela'
+					.leave
+						.leave-content
+							h3.leave-title Espera...
+							p.leave-text Aún no has terminado de seleccionar todos tus nominados.
+							p.leave-text Si abandonas ahora tu participación se perderá.
+							nav.leave-nav 
+								a.btn.btn-modal.btn-modal-leave#leaveGame(href="#") ABANDONAR
+								a.btn.btn-modal.btn-modal-stay(href="#") REGRESAR
+
+					.save
+						.save-content
+							h3.save-title Has seleccionado a todos tus nominados
+							p.save-text Puedes guardar tu quiniela o editar alguna de tus opciones.
+							nav.save-nav 
+								a.btn.btn-modal.btn-modal-edit(href="#") EDITAR
+								a.btn.btn-modal.btn-modal-save#saveGame(href="quiniela-gracias.html") GUARDAR
+							p.save-text.save-text-small Una vez guardada tu quiniela no podrás realizar ningún cambio.
+				
+				if vista == 'registro'
+					.leave
+						.leave-content
+							h3.leave-title Espera...
+							p.leave-text Estas seguro que quieres cerrar sesión.
+							p.leave-text Si sales ahora tu participación se perderá.
+							nav.leave-nav 
+								a.btn.btn-modal.btn-modal-leave#leaveGame(href="#") ABANDONAR
+								a.btn.btn-modal.btn-modal-stay(href="#") REGRESAR
+				
+					.info
+						.info-content.swiper-container
+							.swiper-wrapper.info-container
+								.info-slide.swiper-slide
+									h3.info-title TICKET WEB
+									img(src="/images/content/ticket-web.png", alt="")
+
+								
+								.info-slide.swiper-slide
+									h3.info-title TICKET FÍSICO
+									img(src="/images/content/ticket-fisico.png", alt="")
+							.swiper-pagination
+							p.info-text-small * Si tu ticket no tiene guion, ingresa todos los números.
+					
+				if vista == 'nominados'
+					.leave
+						.leave-content
+							h3.leave-title Espera...
+							p.leave-text Estas seguro que quieres cerrar sesión.
+							p.leave-text Si sales ahora tu participación se perderá.
+							nav.leave-nav 
+								a.btn.btn-modal.btn-modal-leave#leaveGame(href="#") ABANDONAR
+								a.btn.btn-modal.btn-modal-stay(href="#") REGRESAR
+				
+				if vista == 'premios'
+					.leave
+						.leave-content
+							h3.leave-title Espera...
+							p.leave-text Estas seguro que quieres cerrar sesión.
+							p.leave-text Si sales ahora tu participación se perderá.
+							nav.leave-nav 
+								a.btn.btn-modal.btn-modal-leave#leaveGame(href="#") ABANDONAR
+								a.btn.btn-modal.btn-modal-stay(href="#") REGRESAR

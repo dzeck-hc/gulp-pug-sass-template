@@ -1,0 +1,18 @@
+//- REGULAR META DATA AND TITLE
+mixin simple_metas(m_author, m_description, m_keywords, m_title, og_title, og_desc,  s_url, s_img)
+	meta(charset="UTF-8")
+	meta(http-equiv="X-UA-Compatible", content="IE=edge")
+	meta(name="viewport", content="initial-scale=1, maximum-scale=5, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover")
+	meta(name="description" content= m_description)
+	meta(name="keywords" content= m_keywords)
+	meta(name="author", content= m_author)
+	title= m_title
+	meta(property="og:type" content="website")
+	meta(property="og:title" content= og_title)
+	meta(property="og:url" content=s_url)
+	meta(property="og:image" content=s_img)
+	meta(property="og:description" content= og_desc)
+	link(rel="icon" type="image/x-icon" href="images/general/ico/favicon.ico")
+	<!--[if lt IE 9]>
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+	<![endif]-->

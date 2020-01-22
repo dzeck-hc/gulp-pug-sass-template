@@ -1,0 +1,52 @@
+.footer{
+  color:white;
+  font-size: .75em;
+  padding-top: 1.5em;
+  @include fontFamily(400, false);
+  width: 100%;
+  max-width: 1360px;
+  opacity: 0;
+  
+  @include above(1440px){
+    max-width: 90%;
+  }
+
+  &-content{
+    @include flexContainer(row, nowrap, center, space-between);
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    color:rgba($purple-lt, 1);
+  }
+
+  &-link{
+    text-decoration: underline;
+    @include transTime(all, .25s);
+    position: relative;
+    text-decoration: none;
+
+    &:after{
+      content:'';
+      width: 100%;
+      bottom:0;
+      height: 1px;
+      background: white;
+      position: absolute;
+      left:0;
+      transform:translateY(5px);
+      opacity:0;
+      @include transTime(all, .25s);
+    }
+
+    &:hover{
+      color:white;
+
+      &:after{
+        transform:translateY(0);
+        opacity:1;
+      }
+    }
+
+  }
+
+}

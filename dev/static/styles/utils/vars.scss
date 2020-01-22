@@ -1,0 +1,93 @@
+// Colors
+$navy         : #002069;
+
+$magenta      : #d3168f;
+$magenta-lt   : #ff68ca;
+
+$coral        : #f74e4e;
+$coral-lt     : #ff8d83;
+
+$purple       : #8234cf;
+$purple-lt    : #f5a0ff;
+$purple-hr    : #502ed3;
+
+$yellow       : #ffbe06;
+$yellow-lt    : #fff253;
+
+$green        : #4fc974;
+$green-lt     : #9dffbe;
+
+$teal         : #35cbcc;
+$teal-lt      : #6bf6f9;
+
+$blue         : #4780ff;
+$blue-lt      : #94c2ff;
+
+$white        : #ffffff;
+$black        : #1a1a1a;
+
+$gray         : #909090;
+$lightGray    : #d1d6da;
+
+$overlay      : rgba($black, .95);
+
+$success      : #76E200;
+$error        : #f7af98;
+
+$txt          : #434343;
+$input        : #E5E7E9;
+
+
+$facebook     : #4267B2;
+$twitter      : #1DA1F2;
+$instagram    : #e4405f;
+
+$primary			: #4b7dfc;
+$alternate   	: #d2168f;
+$bright 			: #8dffe8;
+$secondary		: #8234cf;
+
+$gold         : #dec082;
+$gold-dark    : #865A00;
+
+$pink         : #96008F;
+$pink-lt      : #ba75ff;
+
+$cyan         : #00ffd7;
+
+
+$menu-gradient : radial-gradient(#8152DC, 80%, rgba(#690fc2, .9));
+
+$onboard-bg : #3e0b89;
+
+// Sizes
+$base-font-size: 16px;
+
+$breakpoints: (
+  "phone-s"     : 320px,
+  "phone-m"     : 400px,
+  "phone-wide"  : 480px,
+  "phablet"     : 560px,
+  "tablet-small": 640px,
+  "tablet"      : 760px,
+  "tablet-wide" : 1024px,
+  "desktop"     : 1248px,
+  "desktop-wide": 1440px
+);
+
+// usage:
+//@include above(map-get($breakpoints, tablet)){
+//      ...
+//  }
+
+$imgUrl         : '../static/images/';
+
+$content-size: 1024px;
+
+// -- Fonts --
+
+// Family Montserrat
+$light    : 400;
+$medium   : 700;
+$bold     : 800;
+$heavy    : 900;

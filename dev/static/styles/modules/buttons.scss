@@ -1,0 +1,97 @@
+.btn {
+  appearance: none;
+  background-color: white;
+  border-radius: 60px;
+  color: $purple ;
+  cursor: pointer;
+  display: block;
+  font-style: italic;
+  font-size: 1em;
+  margin: 1em auto;
+  max-width: 320px;
+  padding: .75em 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 90%;
+  z-index: 1;
+  transition: all .25s ease-in-out;
+  &:hover{
+    background-color: $purple;
+    color:white;
+  }
+
+  &.disabled {
+    opacity:.5;
+    pointer-events: none;
+  }
+
+  &-modal{
+    border: 1px solid $gold;
+    background: transparent;
+    color:white;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  &-exit-modal {
+    border-radius: 18px;
+    cursor: pointer;
+    display: block;
+    height: 24px;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    transform: rotate(45deg);
+    transition: all .15s ease-in-out;
+    width: 24px;
+    z-index: 99;
+  
+    &:hover {
+      transform: rotate(-45deg);
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color:white;
+      transition: all .15s ease-in-out;
+      border-radius:3px;
+    }
+
+    &:before {
+      top: calc(50% - 2px);
+      left: 2px;
+      width:20px;
+      height: 4px
+    }
+
+    &:after {
+      top: 2px;
+      left: calc(50% - 2px);
+      width: 4px;
+      height: 20px;
+    }
+  }
+
+  &-social {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 8em;
+    height: 8em;
+    background-size: contain;
+    border-radius: 100em;
+    border: 2px solid $facebook;
+    &--facebook {
+      background-image: url(../images/svg/ico-facebook.svg);
+     }
+    
+    &:hover{
+      background-color: white;
+      border: 2px solid $gold;
+    }
+  }
+}
+ 

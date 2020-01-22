@@ -1,0 +1,27 @@
+mixin navigation(login, centroamerica)
+  nav.nav
+    span.nav-icon.nav-icon-menu
+  .nav-panel
+    span.nav-icon.nav-icon-close
+    .nav-sesion
+      if login == true 
+        span.nav-sesion-user Gerardo de Jesús Herrera Corral 
+        a(href="#").nav-sesion-logout Cerrar sesión
+      else
+        span.nav-sesion-welcome Bienvenido
+        a(href="#").nav-sesion-login.login-user Inicia sesión
+    ul.nav-list
+      if centroamerica
+        li.nav-item #[a(href="/nominados.html") Nominados]
+        li.nav-item #[a(href="/mis-quinielas.html") Mis quinielas]
+        li.nav-item.login-user #[a(href="/quiniela-login.html") Quiniela]
+        li.nav-item #[a(href="/index.html") Inicio]
+      else
+        li.nav-item #[a(href="/nominados.html") Nominados]
+        li.nav-item #[a(href="/premios-cinepolis.html") Premios Cinépolis#[sup ®]]
+        li.nav-item #[a(href="/socio.html") Socio del Año]
+        li.nav-item #[a(href="/promociones.html") Promociones]
+        li.nav-item #[a(href="/mis-quinielas.html") Mis quinielas]
+        li.nav-item.login-user #[a(href="/quiniela-login.html") Quiniela]
+        li.nav-item #[a(href="/index.html") Inicio]
+    

@@ -1,0 +1,31 @@
+.loader{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(black, .85);
+  background: linear-gradient(45deg, $purple, $blue);
+  z-index: 9999;
+  @include fontFamily(400, false);
+  letter-spacing: 2px;
+  
+  &.is-active{
+    display: block;
+}
+  &-content{
+    position: absolute;
+    width: 65%;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+  }
+}
+  
+.ui-loader{
+  display: none;
+}

@@ -1,0 +1,47 @@
+include ../helpers/helpers
+block variables
+
+doctype html
+html(lang="es-MX")
+  <!--[if lt IE 7 ]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+  <!--[if IE 7 ]><html class="no-js lt-ie10 lt-ie9 lt-ie8"><![endif]-->
+  <!--[if IE 8 ]><html class="no-js lt-ie10 lt-ie9"><![endif]-->
+  <!--[if IE 9 ]><html class="no-js lt-ie10"><![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><html class="no-js"><![endif]-->
+  head
+    block meta-vars
+      - var _author = 'Gerardo H';
+      - var _key =' ';
+      - var _share_url = ' ';
+      - var _share_img = ' ';
+      - var _og_title = ' ';
+      - var _og_desc = ' ';
+
+    +scriptsAnalytics(false)
+    +simple_metas(_author, _description, _key, _title, _og_title, _og_desc , _share_url, _share_img)
+    
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+
+
+
+    block styles
+      link(rel="stylesheet" type='text/css' href="css/styles.min.css")
+
+  body
+    +loader
+    block modal 
+      +modal()
+
+    .wrapper(class=pageClass)
+      block header
+        +header()
+
+      .content
+        block content
+
+      block footer
+        +footer
+
+    
+    block script
+      +scripts-default

@@ -1,0 +1,104 @@
+@import "utils/utils-config";
+@import "libraries/lib-config";
+
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height:100vh;
+  color:white;
+  @include fontFamily(400, false);
+  @include flexContainer(column, nowrap, center, space-between);
+  background: linear-gradient(to top right, $purple 10%, $blue 90%);
+}
+
+.content { 
+  text-align: center;
+  width: 100%;
+  opacity:0;
+
+  @include flexContainer(column, nowrap, center, center);
+
+  @include above(1025px) {
+    flex: 1 0 auto;
+  }
+  
+  section{
+    width: 100%;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $content-size;
+  width: 100%;
+}
+
+
+@import "modules/modules-config";
+@import "pages/pages-index";
+
+
+
+// @media only screen and (min-width: 480px) and (max-width: 896px) and (orientation: landscape){
+//   html{
+//     background: linear-gradient(to top right, $purple, $blue);
+//     min-height:100vh;
+//   }
+
+//   body{
+//     height: 100%;
+//     width: 100%;
+//     position: fixed;
+//     overflow: hidden;
+    
+//     &:after{
+//       content: '';
+//       position: absolute;
+//       width: 100px;
+//       height: 100px;
+//       top: calc(50% - (100px / 2));
+//       left: calc(50% - (100px / 2));
+//       background: url('../images/general/ico/ico-rotate.gif') no-repeat center center / contain;
+//       transform: rotate(-90deg);
+//       animation: fadeIn .5s ease-in-out both;
+//     }
+
+//     .wrapper,
+//     .loader,
+//     .modalBox{
+//       opacity: 0;
+//       pointer-events: none;
+//       z-index: -1;
+//     }
+//   }
+// }
+
+
+//Animations
+// body.is-loaded{
+//   .wrapper.inner-page{
+//     @include above(700px){
+//       &:before{
+//         animation:fadeInDown 1.5s 1s ease-in-out both;
+//       }
+//     }
+//   }
+//   .header{
+//     animation:fadeIn 1.2s .5s ease-in-out both;
+//   }
+//   .content{
+//     animation:fadeIn 1.5s .5s ease-in-out both;
+//   }
+//   .section-header {
+//     animation:fadeIn 1.2s .5s ease-in-out both;
+//   }
+//   .footer{
+//     animation:fadeInDown 1.2s .5s ease-in-out both;
+//   }
+  
+// }
+
+

@@ -1,0 +1,299 @@
+.nav {
+  position: relative;
+  z-index: 2;
+  width: 20px;
+  height: 40px;
+  margin: 1em 0;
+  &-sesion{
+    margin-bottom: 1em;
+    &-user, &-welcome{
+      display: block;
+      font-size: 1.2em;
+      padding: 0 1rem;
+      max-width: 60vw;
+      font-size: 1em;
+      text-align: right;
+    }
+    &-login, &-logout{
+      font-size: .75em;
+      padding: .6em 1rem;
+      display: block;
+      text-align: right;
+    }
+    
+  }
+  &-icon{
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+    position: absolute;
+    left:calc(50% - 20px);
+
+    &-menu{
+      background: url('../images/general/ico/ico-menu.svg')no-repeat center center / contain;
+    }
+
+    &-close{
+      bottom: 2em;
+      left: calc(50% - 20px);
+      border:1px solid rgba(white, .5);
+      border-radius: 20px;
+      transform: rotate(45deg);
+      transition: all .15s ease-in-out;
+      z-index: 9;
+    
+      &:hover {
+        transform: rotate(-45deg);
+      }
+    
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color:white;
+        transition: all .15s ease-in-out;
+        border-radius:3px;
+      }
+  
+      &:before {
+        top: calc(50% - 2px);
+        left: 7px;
+        width:24px;
+        height: 4px
+      }
+  
+      &:after {
+        top: 7px;
+        left: calc(50% - 2px);
+        width: 4px;
+        height: 24px;
+      } 
+    }
+  }
+  &-panel{
+    @include flexContainer(column, nowrap, flex-end, flex-start);
+    background: $purple url('../images/content/menu-bg.svg') no-repeat center bottom -100px / contain;
+    position: fixed;
+    padding: 1em 0;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    transition: 
+        opacity .5s ease-in-out,
+        transform .25s ease-in-out,
+        background-position .75s ease-in-out;
+    transform: translate3d(100%, 0, 0);
+
+    @media screen  and (max-width: 340px) and (max-height: 600px){
+      .nav-item{
+        font-size: 1em;
+        padding: .45rem 1rem;
+      }
+    }
+
+    @include above(600px){
+      padding-top:2em;
+      
+    }
+
+    @include above(800px){
+      background: rgba(#3E0B88, .85) url('../images/content/menu-bg-desk.svg') no-repeat top right -100px / 60%;
+      opacity:0;
+      padding: 2em 2em 0;
+      
+    }
+
+    &.nav-is-open{
+      transform: translate3d(0, 0, 0);
+      background-position: center bottom;
+      opacity: 1;
+
+      @include above(800px){
+        background-position: top right;
+      }
+
+      .nav-item{
+        animation: showMenu .75s ease-in-out both;
+      }
+      @for $i from 1 to 10 {
+        .nav-item:nth-child(#{$i}) { animation-delay: $i * 0.15s; }
+      }
+      
+    }
+  }
+
+  &-item{
+    padding: .75rem 1rem;
+    font-size: 1.2em;
+    text-align: right;
+    opacity:0;
+    animation: hideMenu .75s ease-in-out both;
+
+    a{
+      display: block;
+      @include transTime(all, .25s);
+      color:$purple-lt;
+
+      &:after{
+        content:'';
+        width: 8px;
+        height: 8px;
+        border:1px solid $gold;
+        border-radius:10px;
+        position: absolute;
+        right:-20px;
+        top:calc(50% - 4px);
+        transform:scale(0);
+        transform-origin: left left;
+        @include transTime(all, .25s);
+        
+      }
+
+      &:hover{
+        color:white;
+        transform:translateX(-20px);
+
+        &:after{
+          transform:scale(1)
+        }
+      }
+    }
+
+    
+    &.disabled a{
+      opacity: 0.2 !important;
+      pointer-events:none !important;
+    }
+  }
+}
+
+.menu-panel{
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+  background: $menu-gradient;
+  z-index: -1;
+  text-align: center;
+  @include flexContainer(column, nowrap, center, center);
+  transform: scale(.5);
+  opacity:0;
+  transform-origin: bottom center;
+  @include transTime(all, .25s);
+  &.menu-is-open{
+    transform: scale(1);
+    opacity:1;
+    z-index: 999;
+  }
+
+
+  &-list{
+    margin:0;
+    width: 100%;
+    max-width:520px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 0 2em;
+
+    @include above(1025px){
+      overflow: hidden;
+    }
+    
+
+    @media screen and (min-height:640px) and (min-width: 1200px){
+      max-height: 80vh;
+    }
+
+    li {
+      width: 100%;
+      padding: .6em 0;
+      display: block;
+    }
+
+    .ps-scrollbar-y{
+      background: $gold !important;
+      width: 2px !important;
+      &-rail{
+        width: 2px ;
+      }
+    }
+  }
+  &-item{
+    display: block;
+    padding: 1.5em 1em;
+    border-radius:.6em;
+    transition:.25s ease-in-out;
+    text-transform: uppercase;
+    &:hover{
+      background: $purple;
+    }
+  }
+  &-close{
+    border-radius: 18px;
+    cursor: pointer;
+    display: block;
+    height: 24px;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    transform: rotate(45deg);
+    transition: all .15s ease-in-out;
+    width: 24px;
+    z-index: 9;
+
+    &:hover {
+      transform: rotate(-45deg);
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color:white;
+      transition: all .15s ease-in-out;
+      border-radius:3px;
+    }
+
+    &:before {
+      top: calc(50% - 2px);
+      left: 2px;
+      width:20px;
+      height: 4px
+    }
+
+    &:after {
+      top: 2px;
+      left: calc(50% - 2px);
+      width: 4px;
+      height: 20px;
+    }
+  }
+}
+
+.quiniela{
+  .menu-panel-item{
+    padding: .5rem 1em;
+    text-transform: uppercase;
+    position: relative;
+    &.complete{
+      border: 1px solid $gold;
+      color:$gold;
+      &:before{
+        content: '';
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right:.5em;
+        top:calc(50% - 8px);
+        border-radius:16px;
+        background: $gold url('../images/general/ico/ico-selected.svg')no-repeat center center / contain;
+        display: block;
+      }
+    }
+  }
+}

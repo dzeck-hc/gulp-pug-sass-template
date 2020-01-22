@@ -1,0 +1,13 @@
+.header {
+  width: 100%;
+  flex: 0 0 auto;
+  @include flexContainer(row, nowrap, flex-start, space-between);
+  z-index: 5;
+  max-width: 1360px;
+  padding: 0 1em;
+  opacity: 0;
+  
+  @include above(1440px){
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,50 @@
+.ps-container { position:relative; }
+.ps-container.ps-active-x > .ps-scrollbar-x-rail { display: none; }
+
+.ps-container.ps-active-y > .ps-scrollbar-y-rail{
+	display: none;
+	@include above(760px){
+		display:block;
+	}
+}
+.ps-container > .ps-scrollbar-y-rail{
+	display: none;
+	filter: none;
+	opacity: 1;
+	position: absolute;
+	right: 3px;
+	display: block;
+	width: 8px;
+	border-radius: 4px;
+	background: rgba(white, .1);
+}
+
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y{
+	background-color:$magenta;
+	border-radius: 0.2em;
+	position: absolute;
+	transition: background-color 0.2s linear 0s;
+	width: 8px;
+	left:0;
+}
+
+.ps-container:hover > .ps-scrollbar-y-rail{ opacity: 1 }
+
+.ps-container > .ps-scrollbar-y-rail.in-scrolling,
+.ps-container:hover > .ps-scrollbar-y-rail.in-scrolling{
+	background-color: $magenta;
+	opacity: 1;
+}
+.ps-container:hover > .ps-scrollbar-y-rail:hover{ opacity: 1; }
+
+.vc-overflow{
+	overflow: hidden;
+	position: relative;
+
+	&-scroller {
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		padding-right: 1.2em;
+	}
+}

@@ -1,0 +1,48 @@
+@mixin size($a,$b: $a) {
+  width: $a;
+  height: $b;
+}
+
+@mixin flexContainer($direction, $wrap, $align, $justify) {
+  display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+@mixin gradientBG($top, $bottom, $direction) {
+  filter: unquote(" progid:DXImageTransform.Microsoft.gradient( startColorstr='" + $top + "', endColorstr='" + $bottom + "',GradientType=0 ); ");
+	background:-moz-linear-gradient($direction, $top, $bottom);
+	background:-webkit-linear-gradient($direction, $top, $bottom);
+	background:linear-gradient($direction, $top, $bottom);
+}
+
+
+@mixin transTime($p, $s) {
+	transition:$p $s ease-in-out
+}
+
+
+@mixin fontFamily($w, $italic:true){
+  font-family: 'Montserrat';
+  font-weight: $w;
+  @if $italic {
+    font-style: italic;
+  }
+}
+
+@mixin clearfix(){
+  &:before, &:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+    zoom: 1 if support-for-ie;
+  }
+}
+
+.cf {
+  @include clearfix
+}
